@@ -1,21 +1,16 @@
 import cPickle as pickle
+import astropy.io as fits
 
 class Database(object):
    
    def __init__(self,filename):
        #open and read the file
-       with open(filename,'r') as f:
-           pickle.load(f)
+       self.hdulist=fits.open(filename)
+       self.header = hdulist[1].header
+       self.data = hdulist[1].data
        
    def getColumn(self,name):
-       return self.field(name)
+       return self.data.field(name)
    
-
-
-
-def simple(x):
-	return x
-
-
 
 

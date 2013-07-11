@@ -1,5 +1,5 @@
 import cPickle as pickle
-import astropy.io as fits
+from astropy.io import fits
 
 class Database(object):
    

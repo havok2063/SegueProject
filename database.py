@@ -7,7 +7,7 @@ class Database(object):
        with open(filename,'r') as f:
            pickle.load(f)
        
-   def getColumn(name):
+   def getColumn(self,name):
        return self.field(name)
    
 
